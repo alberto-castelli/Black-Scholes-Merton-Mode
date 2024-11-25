@@ -3,7 +3,6 @@
 
 The Black-Scholes-Merton Model is a mathematical framework used to estimate the price of European-style options - contracts that can only be exercised on their expiration date, unlike American options, which allow execution at any time before expiration.
 
-<br/>
 <h1> Assumptions of the Model: </h1>
 
 - No dividends are paid out during the life of the option.
@@ -16,16 +15,23 @@ The Black-Scholes-Merton Model is a mathematical framework used to estimate the 
 <br/>
 Once we take these assumptions for granted, the model provides the following formulas to compute the options:
 <br/> 
+<br/> 
 
 
+<div align="center">
 
-</br>
+$$
+\begin{aligned}
+\Large{\textbf{European Call Option Value:}} & \quad S_0 N(d_1) - Ke^{-rT} N(d_2) \\
+\Large{\textbf{European Put Option Value:}} & \quad Ke^{-rT} N(-d_2) - S_0 N(-d_1)
+\end{aligned}
+$$
+
+</div>
 
 The terms *N(d1)* is the cumulative probability that a random draw from a standard normal distribution will be less or equal to d1, and represents the probability that the option will finish in the money, adjusted for the fact that the payoff is based on the current asset price. </br>
 Similarly, *N(d2)* is the cumulative probability that a random draw from a standard normal distribution will be less than or equal to d2, and represents the probability that the option will be exercised (the option is in the money at expiration).
 
-
-</br>
 
 <div align="center">
 
