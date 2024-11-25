@@ -52,12 +52,7 @@ Where:
 - $\sigma=$ volatility
 - $T=$ Time
 
-Let's try this with an example: The current price of a stock is 42$, its strike price is 40$, the risk-free rate is 10%, the volatility is 20%, and the strike date is in 6
-
-# **Black Scholes Merton Model addition: dividend yield**
-
-The assumptions of the model are quite restricted, but the importance of the framework is not in discussion. However, we can clearly adapt it by adding some basic things, starting with the dividend yield $q$. </br>
-Therefore, the formula for *d1* and *d2* are as follows:
+The assumptions of the Black-Scholes-Merton model are somewhat restrictive, but the framework's significance is unquestionable. It provides a foundational approach to options pricing based on key variables like the stock price, strike price, time to expiration, risk-free rate, and volatility. However, in the real-world, this model can be further refined. One such refinement is the inclusion of dividend yield $q$, which accounts for the impact of dividends on stock prices and option values. By incorporating this element, we can adjust the model to better reflect the dynamics of assets that pay dividends. Therefore, the formula for *d1* and *d2* are as follows:
 
 <div align="center">
 
@@ -70,14 +65,12 @@ $$
 
 </div>
 
+While the formulas for the European Call Option Value and European Put Option Value stay the same.
 
-
-Since the information downloaded is not in real time, the results are not fully reliable. However, it would be possible to get more accurate option prices, if we were able to obtain the needed values from a faster data provider.
-
-# Adding Option Greeks
+<h1>Adding Option Greeks</h1>
 The Option Greeks are a set of risk measures that indicate how sensitive an option's price is to various factors, such as changes in the price of the underlying asset, time decay, volatility, and interest rates. Therefore, they can help understanding the position that the company could have if it had a new option to the portfolio.
 
-## Delta
+<h2>Delta</h2>
 Delta measures the sensitivity of the option's price to change with respect to changes in the price of the underlying asset. It represents the change in the option's price for a $1 move in the price of the underlying asset:
 - For a put option, its value ranges from -1 to 0: for example, a Delta of -0.5 means that if the underlying asset's price increases by $1, the option price will decrease by $0.5.
 - For a call option, its value ranges from 0 to 1: for example, a Delta of 0.5 means that if the underlying asset's price increases by $1, the option's price will increase by $0.50.
@@ -96,8 +89,7 @@ $$
 
 </div>
 
-
-## Theta
+<h2>Theta</h2>
 Theta measures the sensitivity of the option's price to the passage of time, also known as time decay. It represents the amount by which the option's price decreases as time to expiration decreases by one day. Near expiration Theta tends to increase (in absolute value) as the option approaches expiration, especially for at-the-money options, since a slight increase or decrease could mean a bigger win or loss. </br>
 It can also happen that Theta is negative, indicating that the option's value decreases over time, which is common for both call and put options.
 
@@ -113,7 +105,7 @@ $$
 
 </div>
 
-## Gamma
+<h2>Gamma</h2>
 Gamma measures the rate of change of delta with respect to changes in the underlying asset's price. It indicates how much the delta will change if the underlying asset's price changes by $1.
 - High Gamma: Indicates that delta is highly sensitive to changes in the underlying asset's price, which is typical for at-the-money options.
 - Low Gamma: Indicates that delta is less sensitive to changes in the underlying asset's price, typical for deep in-the-money or out-of-the-money options.
@@ -131,7 +123,7 @@ $$
 
 </div>
 
-## Vega
+<h2>Vega</h2>
 Vega measures the sensitivity of the option's price to changes in the implied volatility of the underlying asset. It represents the change in the option's price for a 1% change in implied volatility.
 - High Vega: Indicates that the option's price is highly sensitive to changes in volatility, common for longer-dated options or options that are at-the-money.
 - Low Vega: Indicates that the option's price is less sensitive to changes in volatility.
@@ -147,7 +139,7 @@ $$
 
 </div>
 
-## Rho
+<h2>Rho</h2>
 Rho measures the sensitivity of the option's price to changes in the risk-free interest rate. It represents the change in the option's price for a 1% change in the risk-free interest rate.
 - Call Option: A positive rho means that the option's price increases as interest rates rise.
 - Put Option: A negative rho means that the option's price decreases as interest rates rise.
@@ -165,9 +157,9 @@ $$
 </div>
 
 
-# **References**
+<h1>References</h1>
 
-## **Textbook**
+**Textbook**
 
 - **[Options, Futures, and Other Derivatives, 11th Edition](https://elibrary.pearson.de/book/99.150005/9781292410623)**
 
